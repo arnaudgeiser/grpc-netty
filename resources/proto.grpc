@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "ch.arnaudgeiser.grpc";
+option java_outer_classname = "NettyGrpcProtos";
+
+service HelloWorld {
+  // Sends a greeting
+  rpc SayHello (stream HelloRequest) returns (HelloReply) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+   bytes data = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+}
